@@ -1,0 +1,34 @@
+{
+    "compilerOptions":
+    {
+        "target": "es5",
+        "module": "commonjs",
+        "lib": ["es6","dom"],
+        "jsx": "react",
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true,
+        "outDir": "dist",
+        "rootDir": "src",
+        "removeComments": true,
+        "strict": true,
+        "noImplicitAny": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "preserveConstEnums": true,
+        "paths": {
+          "*": [ "./*" ]
+        }
+    },
+    "include":
+    [
+        "./src/**/*", 
+        "src/server/graphql2rest.d.ts"
+    ],
+    "exclude":
+    [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}

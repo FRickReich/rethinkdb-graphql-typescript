@@ -17,5 +17,18 @@ export default
         {
             return data;
         });
+    },
+
+    users: async (parent: any, args : any, context: any, info: any) => 
+    {
+        return await r
+        .db('User')
+        .table('users')
+        .orderBy(r.desc("created"))
+        .run(context.conn)
+        .then((data : any) =>
+        {
+            return data;
+        });
     }
 };

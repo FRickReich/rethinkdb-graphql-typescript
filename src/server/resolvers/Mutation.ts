@@ -1,26 +1,14 @@
-import { r } from 'rethinkdb-ts';
+import sendChat from './mutations/sendChat';
+import addUser from './mutations/addUser';
+import updateUser from './mutations/updateUser';
+import deleteUser from './mutations/deleteUser';
+import validateUser from './mutations/validateUser';
 
 export default
 {
-    sendChat: async (root : any, args : any, context : any) =>
-    {
-        const chatMsg =
-        {
-            user: args.user,
-            roomId: args.room,
-            msg: args.message,
-            ts: Date.now(),
-        };
-
-        await r.table("chats")
-        .insert(chatMsg)
-        .run(context.conn)
-        .then((data : any) =>
-        {
-            // console.log('Entry created: ', data)
-            
-        });
-
-        return chatMsg;
-    }
+    sendChat,
+    addUser,
+    updateUser,
+    deleteUser,
+    validateUser
 };
